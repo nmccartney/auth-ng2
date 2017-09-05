@@ -1,0 +1,21 @@
+<br>
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">Find By:</span>
+  <input type="text" class="form-control" placeholder="Name" aria-label="Name" aria-describedby="basic-addon1">
+</div>
+<br>
+<app-user-card *ngFor="let user of users" [user]="user"> 
+
+    <div class="user-avatar"></div>
+
+    <h2>
+      <span class="title">{{user.name.title}}</span>
+      <span class="first">{{user.name.first}}</span>
+      <span class="last">{{user.name.last}}</span>
+    </h2> 
+    
+    <h4>{{user.email}}</h4>
+    
+    <pre>{{user | json}}</pre>
+
+</app-user-card> 

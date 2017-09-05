@@ -1,0 +1,43 @@
+
+<div class="panel">
+  <div class="panel-body">
+    
+    <div class="row">
+      <div class="col-xs-2">
+        <img [src]="user.picture.large" alt=""> 
+        <ng-content select=".user-avatar"></ng-content>
+      </div>
+      <div class="col-xs-8">
+
+        <div class="row">
+          <div class="col-xs-6">
+            <a href="/user/1">
+              <ng-content select="h2"></ng-content>
+            </a>
+            <ng-content select="h4"></ng-content>
+          </div>
+
+          <!-- <div class="col-xs-6">
+            <p>{{user.location.street}}</p>
+            <p>
+              <span class="city">{{user.location.city}}</span>,
+              <span class="state">{{user.location.state}}</span>
+              <span class="postcode">{{user.location.postcode}}</span>
+            </p>
+          </div> -->
+        </div>
+
+        <hr>
+
+        <ng-content select="pre" *ngIf="showInfo"></ng-content>
+
+      </div>
+      <div class="col-xs-2">
+         <div class="btn btn-primary btn-block" (click)="toggleInfo()">More Info</div>
+      </div>
+    </div>
+
+    <!-- /end panel body -->
+  </div>
+</div>
+

@@ -1,11 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpModule, JsonpModule } from '@angular/http';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
+import { UserModule } from './user/user.module';
+import { GroupModule } from './group/group.module';
 
 const routes: Routes = [
   { path: ':status', component: LoginComponent },
@@ -21,7 +23,10 @@ const routes: Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(routes)
+    JsonpModule,
+    RouterModule.forRoot(routes),
+    UserModule,
+    GroupModule
   ],
   providers: [],
   bootstrap: [AppComponent]

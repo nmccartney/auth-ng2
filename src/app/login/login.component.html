@@ -1,5 +1,38 @@
-<p>
+<h2>
   Please login
-</p>
+</h2>
+ 
+<button class="btn btn-default destroy" (click)="login()">Facebook</button>
 
-<button class="destroy" (click)="login()">Facebook</button>
+<div>
+  <!-- <img  src="https://api.adorable.io/avatars/111/java"/> -->
+</div>
+
+
+<ul class="list-unstyled">
+  <li *ngFor="let guy of people">
+    <div class="avatar">
+      <img [src]="guy.picture.large" alt="avatar">
+    </div>
+    <div class="profile-details">
+      <div class="name">
+        <span class="title h1">{{guy.name.title}}</span>
+        <span class="first h3">{{guy.name.first}}</span>
+        <span class="last h3">{{guy.name.last}}</span>
+      </div>
+      <div class="email">
+        {{ guy.email }}
+      </div>
+    </div>
+    
+    <div class="hidden">
+      <pre>{{ guy | json }}</pre>
+    </div>
+    
+  </li>
+</ul>
+
+<h4>People</h4>
+<pre>{{people | json}}</pre>
+<h4>auth:</h4>
+<pre>{{auth | json}}</pre>
